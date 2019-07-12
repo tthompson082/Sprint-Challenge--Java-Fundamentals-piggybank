@@ -23,5 +23,13 @@ public class Main
         piggyBank.add(new Penny(10));
 
         piggyBank.forEach(m -> System.out.println(m));
+
+        double myValue = 0.00;
+        for (int i = 0; i < piggyBank.size(); i++)
+        {
+            myValue += piggyBank.get(i).getQuantityValue();
+        }
+
+        System.out.println("The piggy bank holds " + fp.format(myValue));
     }
 }
