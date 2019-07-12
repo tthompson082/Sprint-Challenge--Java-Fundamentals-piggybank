@@ -1,6 +1,6 @@
 package piggyBank;
 
-public class Penny
+public class Penny implements Money
 {
     // fields
     private static int totalPennies = 0;
@@ -8,6 +8,12 @@ public class Penny
     public double value = 0.01;
 
     // constructor
+    public Penny()
+    {
+        this.pennyQuantity = 1;
+        totalPennies += 1;
+    }
+
     public Penny(int pennyQuantity)
     {
         this.pennyQuantity = pennyQuantity;
@@ -25,6 +31,7 @@ public class Penny
         return pennyQuantity * value;
     }
 
+    @Override
     public double getTotalValue()
     {
         return value * totalPennies;

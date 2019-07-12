@@ -1,6 +1,6 @@
 package piggyBank;
 
-public class Dime
+public class Dime implements Money
 {
     // fields
     private static int totalDimes = 0;
@@ -8,6 +8,12 @@ public class Dime
     public double value = 0.10;
 
     // constructor
+    public Dime()
+    {
+        this.dimeQuantity = 1;
+        totalDimes += 1;
+    }
+
     public Dime(int dimeQuantity)
     {
         this.dimeQuantity = dimeQuantity;
@@ -25,6 +31,7 @@ public class Dime
         return dimeQuantity * value;
     }
 
+    @Override
     public double getTotalValue()
     {
         return value * totalDimes;

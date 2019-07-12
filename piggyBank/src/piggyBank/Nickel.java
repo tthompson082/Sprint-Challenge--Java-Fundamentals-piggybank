@@ -1,6 +1,6 @@
 package piggyBank;
 
-public class Nickel
+public class Nickel implements Money
 {
     // fields
     private static int totalNickels = 0;
@@ -8,6 +8,12 @@ public class Nickel
     public double value = 0.05;
 
     // constructor
+    public Nickl()
+    {
+        this.nickelQuantity = 1;
+        totalNickels += 1;
+    }
+
     public Nickel(int nickelQuantity)
     {
         this.nickelQuantity = nickelQuantity;
@@ -25,6 +31,7 @@ public class Nickel
         return nickelQuantity * value;
     }
 
+    @Override
     public double getTotalValue()
     {
         return value * totalNickels;

@@ -1,6 +1,6 @@
 package piggyBank;
 
-public class Quarter
+public class Quarter implements Money
 {
     // fields
     private static int totalQuarters = 0;
@@ -8,6 +8,12 @@ public class Quarter
     public double value = 0.25;
 
     // constructor
+    public Quarter()
+    {
+        this.quarterQuantity = 1;
+        totalQuarters += 1;
+    }
+
     public Quarter(int quarterQuantity)
     {
         this.quarterQuantity = quarterQuantity;
@@ -25,6 +31,7 @@ public class Quarter
         return quarterQuantity * value;
     }
 
+    @Override
     public double getTotalValue()
     {
         return value * totalQuarters;
