@@ -8,7 +8,7 @@ public class Quarter
     public double value = 0.25;
 
     // constructor
-    public Dollar(int quarterQuantity)
+    public Quarter(int quarterQuantity)
     {
         this.quarterQuantity = quarterQuantity;
         totalQuarters += quarterQuantity;
