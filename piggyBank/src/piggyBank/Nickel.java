@@ -5,7 +5,7 @@ public class Nickel
     // fields
     private static int totalNickels = 0;
     private int nickelQuantity;
-    public double value = 0.25;
+    public double value = 0.05;
 
     // constructor
     public Nickel(int nickelQuantity)
