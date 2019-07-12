@@ -1,6 +1,7 @@
 package piggyBank;
 
 import java.util.*;
+
 import java.text.DecimalFormat;
 
 public class Main
@@ -13,8 +14,14 @@ public class Main
         ArrayList<Money> piggyBank = new ArrayList<>();
 
         // add the coins to the list
-        piggyBank.add(newQuarter());
+        piggyBank.add(new Quarter());
         piggyBank.add(new Dime());
-        piggyBank.add(newDollar(5));
+        piggyBank.add(new Dollar(5));
+        piggyBank.add(new Nickel(3));
+        piggyBank.add(new Dime(7));
+        piggyBank.add(new Dollar());
+        piggyBank.add(new Penny(10));
+
+        piggyBank.forEach(m -> System.out.println(m));
     }
 }
