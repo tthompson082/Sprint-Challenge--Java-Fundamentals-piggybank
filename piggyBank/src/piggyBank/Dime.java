@@ -17,7 +17,7 @@ public class Dime implements Money
     public Dime(int dimeQuantity)
     {
         this.dimeQuantity = dimeQuantity;
-        totalDime += dimeQuantity;
+        totalDimes += dimeQuantity;
     }
 
     // methods
@@ -40,13 +40,14 @@ public class Dime implements Money
     @Override
     public String toString()
     {
-        if (DimeQuantity == 1)
+        if (dimeQuantity == 1)
         {
             String rtnStr = dimeQuantity + " Dime";
+            return rtnStr;
         } else 
         {
             String rtnStr = dimeQuantity + " Dimes";
+            return rtnStr;
         }
-        return rtnStr;
     }
 }

@@ -8,7 +8,7 @@ public class Nickel implements Money
     public double value = 0.05;
 
     // constructor
-    public Nickl()
+    public Nickel()
     {
         this.nickelQuantity = 1;
         totalNickels += 1;
@@ -17,7 +17,7 @@ public class Nickel implements Money
     public Nickel(int nickelQuantity)
     {
         this.nickelQuantity = nickelQuantity;
-        totalQuarters += nickelQuantity;
+        totalNickels += nickelQuantity;
     }
 
     // methods
@@ -43,10 +43,11 @@ public class Nickel implements Money
         if (nickelQuantity == 1)
         {
             String rtnStr = nickelQuantity + " Nickel";
+            return rtnStr;
         } else 
         {
             String rtnStr = nickelQuantity + " Nickels";
+            return rtnStr;
         }
-        return rtnStr;
     }
 }

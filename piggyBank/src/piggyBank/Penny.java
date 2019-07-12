@@ -43,10 +43,11 @@ public class Penny implements Money
         if (pennyQuantity == 1)
         {
             String rtnStr = pennyQuantity + " Penny";
+            return rtnStr;
         } else 
         {
             String rtnStr = pennyQuantity + " Pennies";
+            return rtnStr;
         }
-        return rtnStr;
     }
 }

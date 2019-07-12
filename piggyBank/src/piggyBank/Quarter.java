@@ -43,10 +43,11 @@ public class Quarter implements Money
         if (quarterQuantity == 1)
         {
             String rtnStr = quarterQuantity + " Quarter";
+            return rtnStr;
         } else 
         {
             String rtnStr = quarterQuantity + " Quarters";
+            return rtnStr;
         }
-        return rtnStr;
     }
 }
