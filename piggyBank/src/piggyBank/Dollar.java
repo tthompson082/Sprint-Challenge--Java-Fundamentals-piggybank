@@ -3,38 +3,48 @@ package piggyBank;
 public class Dollar implements Money
 {
     // fields
-    private static int totalDollars = 0;
     private int dollarQuantity;
-    public double value = 1.00;
+    private double value = 1.00;
 
     // constructor
+    // Default Constructor for if there isn't a quantity of coins added
     public Dollar()
     {
         this.dollarQuantity = 1;
-        totalDollars += 1;
     }
 
+    // constructor for adding with a quantity of coins
     public Dollar(int dollarQuantity)
     {
         this.dollarQuantity = dollarQuantity;
-        totalDollars += dollarQuantity;
     }
 
     // methods
-    public int getDollarQuantity()
-    {
-        return dollarQuantity;
-    }
-
+    // Return the value of the specific quantity added
     public double getQuantityValue()
     {
         return dollarQuantity * value;
     }
 
-    @Override
-    public double getTotalValue()
+    // Updates the specific quantity added (added for STRETCH)
+    public void setQuantity(int dollarQuantity)
     {
-        return value * totalDollars;
+        this.dollarQuantity = dollarQuantity;
+    }
+
+    // Overrides for methods from Money Interface
+    // Returns the quantity of Dollars added
+    @Override
+    public int getQuantity()
+    {
+        return dollarQuantity;
+    }
+
+    // Returns the value of a Dollar
+    @Override
+    public double getValue()
+    {
+        return value;
     }
 
     @Override

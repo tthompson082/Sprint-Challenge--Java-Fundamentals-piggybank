@@ -3,40 +3,46 @@ package piggyBank;
 public class Penny implements Money
 {
     // fields
-    private static int totalPennies = 0;
     private int pennyQuantity;
-    public double value = 0.01;
+    private double value = 0.01;
 
     // constructor
+    // Default Constructor for if there isn't a quantity of coins added
     public Penny()
     {
         this.pennyQuantity = 1;
-        totalPennies += 1;
     }
 
+    // constructor for adding with a quantity of coins
     public Penny(int pennyQuantity)
     {
         this.pennyQuantity = pennyQuantity;
-        totalPennies += pennyQuantity;
     }
 
     // methods
-    public int getPennyQuantity()
-    {
-        return pennyQuantity;
-    }
-
+    // Return the value of the specific quantity added
     public double getQuantityValue()
     {
         return pennyQuantity * value;
     }
 
+    // Overrides for methods from Money Interface
+    // Returns the quantity of Pennies added
     @Override
-    public double getTotalValue()
+    public int getQuantity()
     {
-        return value * totalPennies;
+        return pennyQuantity;
     }
 
+    // Returns the value of a Nickel
+    @Override
+    public double getValue()
+    {
+        return value;
+    }
+
+
+    // Use an If statement to display either the singular or pluarl form of the coin
     @Override
     public String toString()
     {

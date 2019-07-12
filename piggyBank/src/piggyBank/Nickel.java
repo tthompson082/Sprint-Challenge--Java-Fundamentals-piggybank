@@ -3,40 +3,46 @@ package piggyBank;
 public class Nickel implements Money
 {
     // fields
-    private static int totalNickels = 0;
     private int nickelQuantity;
-    public double value = 0.05;
+    private double value = 0.05;
 
     // constructor
+    // Default Constructor for if there isn't a quantity of coins added
     public Nickel()
     {
         this.nickelQuantity = 1;
-        totalNickels += 1;
     }
 
+    // constructor for adding with a quantity of coins
     public Nickel(int nickelQuantity)
     {
         this.nickelQuantity = nickelQuantity;
-        totalNickels += nickelQuantity;
     }
 
     // methods
-    public int getQNickelQuantity()
-    {
-        return nickelQuantity;
-    }
-
+    // Return the value of the specific quantity added
     public double getQuantityValue()
     {
         return nickelQuantity * value;
     }
 
+    // Overrides for methods from Money Interface
+    // Returns the quantity of Nickels added
     @Override
-    public double getTotalValue()
+    public int getQuantity()
     {
-        return value * totalNickels;
+        return nickelQuantity;
     }
 
+    // Returns the value of a Nickel
+    @Override
+    public double getValue()
+    {
+        return value;
+    }
+
+
+    // Use an If statement to display either the singular or pluarl form of the coin
     @Override
     public String toString()
     {

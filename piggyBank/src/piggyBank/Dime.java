@@ -3,40 +3,45 @@ package piggyBank;
 public class Dime implements Money
 {
     // fields
-    private static int totalDimes = 0;
     private int dimeQuantity;
-    public double value = 0.10;
+    private double value = 0.10;
 
     // constructor
+    // Default Constructor for if there isn't a quantity of coins added
     public Dime()
     {
         this.dimeQuantity = 1;
-        totalDimes += 1;
     }
 
+    // constructor for adding with a quantity of coins
     public Dime(int dimeQuantity)
     {
         this.dimeQuantity = dimeQuantity;
-        totalDimes += dimeQuantity;
     }
 
     // methods
-    public int getDimeQuantity()
-    {
-        return dimeQuantity;
-    }
-
+    // Return the value of the specific quantity added
     public double getQuantityValue()
     {
         return dimeQuantity * value;
     }
 
+    // Overrides for methods from Money Interface
+    // Returns the quantity of Dimes added
     @Override
-    public double getTotalValue()
+    public int getQuantity()
     {
-        return value * totalDimes;
+        return dimeQuantity;
     }
 
+    // Returns the value of a Dime
+    @Override
+    public double getValue()
+    {
+        return value;
+    }
+
+    // Use an If statement to display either the singular or pluarl form of the coin
     @Override
     public String toString()
     {
